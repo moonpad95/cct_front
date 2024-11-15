@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '@/components/useColorScheme';
+import { modoOscuro } from './modoOscuro';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -15,7 +16,7 @@ export {
 
 export const unstable_settings = {
   // Ensure that reloading on `/modal` keeps a back button present.
-  initialRouteName: '(tabs)',
+  initialRouteName: '',
 };
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -47,12 +48,60 @@ export default function RootLayout() {
 
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
+  const { title, green, degrader, grayDark, blue, orange} = modoOscuro(); // Extraemos grayDark y green
+  const backP = 'Atras';
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
+        {/* <Stack.Screen name="(tabs)" options={{ headerShown: false }} /> */}
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="Nosotros" options={{
+          headerStyle: {
+            backgroundColor: grayDark,
+          },
+          headerTintColor: title,
+          headerTitle: "Más Sobre CCT",
+          headerBackTitle: backP,
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }} />
+        {/* <Stack.Screen name="modal" options={{ presentation: 'modal' }} /> */}
+        <Stack.Screen name="home1" options={{ presentation: 'modal', headerTitle: 'Aviso de privacidad' }} />
+        <Stack.Screen name="beneficios" options={{
+          headerStyle: {
+            backgroundColor: grayDark,
+          },
+          headerTintColor: title,
+          headerTitle: "Beneficios de CCT",
+          headerBackTitle: backP,
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }} />
+        <Stack.Screen name="redes" options={{
+          headerStyle: {
+            backgroundColor: grayDark,
+          },
+          headerTintColor: title,
+          headerTitle: "Redes Sociales",
+          headerBackTitle: backP,
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }} />
+        <Stack.Screen name="soporte" options={{
+          headerStyle: {
+            backgroundColor: grayDark,
+          },
+          headerTintColor: title,
+          headerTitle: "FAQ",
+          headerBackTitle: backP,
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }} />
       </Stack>
     </ThemeProvider>
   );

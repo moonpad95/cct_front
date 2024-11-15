@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "726446677339",
+    "project_id": "expo-notipush",
+    "storage_bucket": "expo-notipush.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:726446677339:android:8b13d2c4136a0fa4964e7e",
+        "android_client_info": {
+          "package_name": "com.moonpad.cct_front"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoWTOY_qD8zX2TLOakaHpiOVwudz3mhKA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

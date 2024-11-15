@@ -13,13 +13,16 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "cct"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.moonpad.cct_front",
+      "googleServicesFile": "./android/app/google-services.json"
     },
     "web": {
       "bundler": "metro",
@@ -27,10 +30,16 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      "expo-font"
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "d0de4559-6589-40ce-ae95-3d6d306d0125"
+      }
     }
   }
 }
